@@ -17,7 +17,7 @@ async function fetchAllWebsites(): Promise<any[]> {
   const all: any[] = [];
   let page = 1;
   while (true) {
-    const r = await fetch(`/api/websites?page=${page}&pageSize=200`);
+    const r = await fetch(`/api/me/websites?page=${page}&pageSize=200`);
     if (!r.ok) break;
     const j = await r.json();
     const batch = Array.isArray(j) ? j : j.data || [];
